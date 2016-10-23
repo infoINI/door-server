@@ -40,9 +40,6 @@ class TuerSensor(object):
 ## Server
 
 class CafeServer(object):
-    """Hauptklasse"""
-    
-
     def _startTCP(self):
         ## TCP Server starten
         # port CAFE, 51966
@@ -77,13 +74,8 @@ class CafeServer(object):
 #######################################################################
 ## Start
 if __name__ == "__main__":
-
-
-
-    cafeserver = CafeServer()
-
     try:
-        cafeserver.run()
+        cafeserver = CafeServer()
     except KeyboardInterrupt:
         print "beenden..."
         cafeserver.shutdown()
