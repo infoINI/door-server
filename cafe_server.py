@@ -58,6 +58,8 @@ class CafeServer(object):
 
         self._startTCP()
 
+    def run(self):
+        self.server_thread.join()
 
     def getData(self):
         return {'tuer_offen':self._tuer.ist_offen()}
@@ -76,6 +78,7 @@ class CafeServer(object):
 if __name__ == "__main__":
     try:
         cafeserver = CafeServer()
+        cafeserver.run()
     except KeyboardInterrupt:
         print "beenden..."
         cafeserver.shutdown()
